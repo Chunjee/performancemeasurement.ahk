@@ -1,0 +1,15 @@
+{
+	"date": 20201109,
+	"version": "0.12.0",
+	"testGroups": ["this", "that", "theother"],
+	"tests": {
+		".floor": {
+			"without precision": 0.002,
+			"with precision": 0.01
+		},
+		".count": {
+			"array": 0.002,
+			"string": 0.01
+		}
+	}
+}
