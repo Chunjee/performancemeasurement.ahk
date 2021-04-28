@@ -1,7 +1,7 @@
 {
-	"name": "dict.ahk",
-	"version": "0.2.1",
-	"description": "A modern dictionary libary for AutoHotkey",
+	"name": "performancemeasurement.ahk",
+	"version": "0.1.0",
+	"description": "This package is for running performance tests",
 	"main": "export.ahk",
 	"dependencies": {},
 	"devDependencies": {

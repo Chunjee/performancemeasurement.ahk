@@ -1,4 +1,4 @@
-class performance {
+class performancemeasurement {
 
 	; --- Static Variables ---
 	__New(param_default:="") {

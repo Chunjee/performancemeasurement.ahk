@@ -8,7 +8,7 @@
 SetBatchLines, -1
 
 
-performanceObj := new performance()
+performanceObj := new performancemeasurement()
 assert := new unittesting()
 A := new biga()
 
@@ -52,12 +52,12 @@ performanceObj.measure(boundFunc)
 
 performanceObj.group("chunk")
 performanceObj.label("array")
-boundFunc := ObjBindMethod(A, "chunk", array, 3)
+boundFunc := ObjBindMethod(A, "chunk", array)
 performanceObj.measure(boundFunc)
 
 performanceObj.group("compact")
 performanceObj.label("array")
-boundFunc := ObjBindMethod(A, "compact", array, 3)
+boundFunc := ObjBindMethod(A, "compact", array)
 performanceObj.measure(boundFunc)
 
 performanceObj.group("concat")
@@ -65,11 +65,56 @@ performanceObj.label("array")
 boundFunc := ObjBindMethod(A, "concat", array, array)
 performanceObj.measure(boundFunc)
 
+performanceObj.group("difference")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "difference", array, array)
+performanceObj.measure(boundFunc)
 
-fn_bleh(param) {
-	msgbox, function
-	return param / 2
+performanceObj.group("drop")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "drop", array)
+performanceObj.measure(boundFunc)
+
+performanceObj.group("dropRight")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "dropRight", array)
+performanceObj.measure(boundFunc)
+
+performanceObj.group("dropRightWhile")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "dropRightWhile", array, Func("fn_true"))
+performanceObj.measure(boundFunc)
+
+fn_true() {
+	return true
 }
+
+fn_false() {
+	return true
+}
+
+performanceObj.group("dropWhile")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "dropWhile", array, Func("fn_true"))
+performanceObj.measure(boundFunc)
+
+performanceObj.group("fill")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "fill", array)
+performanceObj.measure(boundFunc)
+
+performanceObj.group("findIndex")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "findIndex", array, Func("fn_false"))
+performanceObj.label("object search")
+boundFunc := ObjBindMethod(A, "findIndex", array, object)
+performanceObj.measure(boundFunc)
+
+performanceObj.group("findLastIndex")
+performanceObj.label("array")
+boundFunc := ObjBindMethod(A, "findLastIndex", array, Func("fn_false"))
+performanceObj.measure(boundFunc)
+
 
 ; omit
 

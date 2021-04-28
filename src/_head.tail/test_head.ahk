@@ -8,7 +8,7 @@
 SetBatchLines, -1
 
 
-performanceObj := new performance()
+performanceObj := new performancemeasurement()
 assert := new unittesting()
 A := new biga()
 

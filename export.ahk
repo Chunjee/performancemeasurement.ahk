@@ -1,4 +1,4 @@
-class performance {	; --- Static Variables ---	__New(param_default:="") {		this.testRepeats := 10		this.data := {}		this.data.tests := {}		this.groupVar := ""		this.labelVar := ""	}	; --- Static Methods ---	_typeException() {
+class performancemeasurement {	; --- Static Variables ---	__New(param_default:="") {		this.testRepeats := 10		this.data := {}		this.data.tests := {}		this.groupVar := ""		this.labelVar := ""	}	; --- Static Methods ---	_typeException() {
 		if (this.throwExceptions == true) {
 			throw Exception("Type Error", -2)
 		}
@@ -21,13 +21,11 @@ class performance {	; --- Static Variables ---	__New(param_default:="") {		
 			param_boundFunc.call()
 		}
 		speed := QPC(0)
-		msgbox, % speed
 		avgSpeed := speed / this.testRepeats
 		if (!isObject(this.data.tests[this.groupVar])) {
 			this.data.tests[this.groupVar] := []
 		}
-		this.data.tests[this.groupVar][this.labelVar] := round(avgSpeed, 2)
-		; msgbox, % unittesting._print(this.data.tests)
+		this.data.tests[this.groupVar][this.labelVar] := round(avgSpeed, 4)
 		return avgSpeed
 	}
 
