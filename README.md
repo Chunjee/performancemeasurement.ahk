@@ -25,7 +25,7 @@ performanceObj.measure(testBoundFunc)
 
 ; test a second function
 performanceObj.label("arrayFlat2 function")
-testBoundFunc := Func("arrayFlat1").bind([[[[[1, 2, [3]]]]])
+testBoundFunc := Func("arrayFlat2").bind([[[[[1, 2, [3]]]]])
 arrayFlat2(arr)
 {
 	newarr := []
